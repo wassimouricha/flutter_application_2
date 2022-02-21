@@ -12,12 +12,15 @@ class Wassimus extends StatelessWidget {
       title: "Application de wassim",
       theme: Themes().theme1,
       home: Scaffold(
+        // resizeToAvoidBottomInset: false, //ici cette commande permet de supprimer l'erreur indiquand que le clavier du tel/tablette cache le contenu de l' appli
         appBar: AppBar(
           title: Text("Wassim's app"),
         ),
-        body: Padding(
+        body: SingleChildScrollView(child:  //cette commande ici permet d'indiquer au tel/tab que l'on peut scroller dans l'app
+        Padding(
           padding: EdgeInsets.all(30),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "Login",
@@ -66,7 +69,7 @@ class Wassimus extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      ),)
     );
   }
 
