@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'themes.dart';
 
 void main() {
   runApp(Wassimus());
@@ -9,12 +10,17 @@ class Wassimus extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Application de wassim",
+      theme: Themes().theme1,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Wassims little app"),
+          title: Text("Wassim's app"),
         ),
         body: Column(
           children: [
+            Text(
+              "Login",
+              style: TextStyle(fontSize: 45),
+            ),
             TextField(
               decoration: InputDecoration(
                   hintText:
@@ -25,24 +31,21 @@ class Wassimus extends StatelessWidget {
               obscureText:
                   true, //obscureText permet de chacher le texte c'est un booleen donc true or false
             ),
-            Row(
-              children: [
-                //iciavec row je fais une sorte de container horizontale avec comme enfant les deux widget bouton que j'ai crée précédement
-                ElevatedButton(
-                  onPressed: boutonLoginAppuyer,
-                  child: Text(
-                      "Login"), //child est un widget et donc on lui indique ce que l'on veut à l'intérieur
-                ), // elevatedbutton un simple bouton
-                Spacer(), //le spacer va creer un espace entre les deux boutons
-                ElevatedButton(
-                  onPressed: () {
-                    print(
-                        "le bouton continuer en tant qu'invité à été appuyé !");
-                  },
-                  child: Text("Continuer en tant qu'invité"),
-                )
-              ],
-            ),
+            // Row(
+            //   children: [
+            //iciavec row je fais une sorte de container horizontale avec comme enfant les deux widget bouton que j'ai crée précédement
+            ElevatedButton(
+              onPressed: boutonLoginAppuyer,
+              child: Text(
+                  "Login"), //child est un widget et donc on lui indique ce que l'on veut à l'intérieur
+            ), // elevatedbutton un simple bouton
+            Spacer(), //le spacer va creer un espace entre les deux boutons
+            ElevatedButton(
+              onPressed: () {
+                print("le bouton > en tant qu'invité à été appuyé !");
+              },
+              child: Text("Continuer en tant qu'invité"),
+            )
           ],
         ),
       ),
