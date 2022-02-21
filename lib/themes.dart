@@ -7,8 +7,11 @@ import 'package:flutter/material.dart';
 
 class Themes {
  final ThemeData theme1 = ThemeData(
-   
-   primaryColor: Color(0xFFDC143C),
+   appBarTheme: AppBarTheme(backgroundColor:Color(0xFFDC143C)),
+   fontFamily: "Quicksand",
+   inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10))) ,
+   ),
    elevatedButtonTheme: ElevatedButtonThemeData(
      style: ElevatedButton.styleFrom(primary:Color(0xFFDC143C) )) //pour indiquer que c'est un code hexadecimale on met 0xFF avant le code 
  ); 
