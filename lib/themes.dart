@@ -12,7 +12,7 @@ class Themes {
         border: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
         filled: true,
-        fillColor: Color.fromARGB(255, 244, 248, 19)),
+        fillColor: Color.fromARGB(255, 255, 255, 255)),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(primary: Color(0xFFDC143C))),
     scaffoldBackgroundColor: Color.fromARGB(255, 255, 255,

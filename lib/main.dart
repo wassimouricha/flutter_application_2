@@ -51,12 +51,20 @@ class Wassimus extends StatelessWidget {
                 ),
               ), // elevatedbutton un simple bouton
               // Spacer(), //le spacer va creer un espace entre les deux boutons
-              Row(children: [
-                 Expanded(child: Divider(thickness: 1.5,)) , //divider est le trait permettant de diviser et de faire un espace entre mes deux bouttons
-                 Padding(padding: EdgeInsets.symmetric(horizontal: 15),
+              Column(children: [
+                 Divider(thickness: 1.5) , //divider est le trait permettant de diviser et de faire un espace entre mes deux bouttons
+                 Padding(padding: EdgeInsets.all(8),
                  child: Text("Ou"),),
-                  Expanded(child: Divider(thickness: 1.5,))
+                  Divider(thickness: 1.5,)
               ],),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 15),
+                child: TextField(
+                  decoration: InputDecoration(
+                      hintText:
+                          "Nom"), //textfield est un champ de texte
+                ),
+              ),
              
               Padding(
                   padding: EdgeInsets.all(10),
