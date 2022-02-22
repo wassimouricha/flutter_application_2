@@ -10,6 +10,7 @@ class Themes {
   final ThemeData theme1 = ThemeData(
     appBarTheme: AppBarTheme(backgroundColor: Color(0xFFDC143C)),
     fontFamily: "Quicksand",
+    primaryColor: Color.fromARGB(255, 20, 107, 220),
     inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),

@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print, use_key_in_widget_constructors, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 import 'themes.dart';
@@ -40,22 +40,29 @@ class Wassimus extends StatelessWidget {
           "Login",
           style: TextStyle(fontSize: 45),
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 15),
-          child: TextField(
-            decoration: InputDecoration(
-                hintText: "Tapez votre nom"), //textfield est un champ de texte
-          ),
-        ),
+        // Padding(
+        //   padding: EdgeInsets.symmetric(vertical: 15),
+        //   child: TextField(
+        //     decoration: InputDecoration(
+        //         hintText: "Tapez votre nom"), //textfield est un champ de texte
+        //   ),
+        // ),
 
         // Row(
         //   children: [
-        //iciavec row je fais une sorte de container horizontale avec comme enfant les deux widget bouton que j'ai crée précédement
+        //ici avec row je fais une sorte de container horizontale avec comme enfant les deux widget bouton que j'ai crée précédement
+        CustomTextField(hinText:"Tapez votre nom" , padding:EdgeInsets.symmetric(vertical: 15),longueurMaximale: 20,),
         CustomTextField(
-            padding: EdgeInsets.only(bottom: 15),
-            hinText: "Mot de passe ",
-            obscureText: true,
-            longueurMinimale:5), //ici avec l'importation de mon customtextfield hintext et obscuretext j'ai juste a indiqué les parametres dans le widget
+          padding: EdgeInsets.only(bottom: 15),
+          hinText: "Tapez votre mot de passe ",
+          obscureText: true,
+          longueurMinimale: 5,
+          longueurMaximale: 10,
+          valueSet: (valid, TextEntree) {
+           
+            print(TextEntree);
+          },
+        ), //ici avec l'importation de mon customtextfield hintext et obscuretext j'ai juste a indiqué les parametres dans le widget
 
         Padding(
           padding: EdgeInsets.all(10),

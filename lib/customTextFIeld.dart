@@ -8,10 +8,12 @@ class CustomTextField extends StatefulWidget {
       this.hinText = "",
       this.obscureText = false,
       this.longueurMaximale,
-      this.longueurMinimale}); //ici on va creer un padding , un hinText et un ObscureText spécifique
+      this.longueurMinimale,
+      this.valueSet}); //ici on va creer un padding , un hinText et un ObscureText spécifique
 
   //la classe CustomTextFIeld sera pour tout ce qui est statique , pour tout ce qu'on définit quand on crée le widget et qui ne va pas changer
 
+  void Function(bool valid, String TextEntree)? valueSet;
   EdgeInsets padding;
   String hinText;
   bool obscureText; //bool est un booleen
@@ -26,7 +28,8 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  String? errorMessage; //? indique la variable peut etre un null ou ne pas etre un null
+  String?
+      errorMessage; //? indique la variable peut etre un null ou ne pas etre un null
 
   void userSubmittedText(String TextEntree) {
     //sera notre fonction lorsque l'on aura cliqué sur envoyé et elle sera enclenché par onSubmitted
@@ -41,10 +44,23 @@ class _CustomTextFieldState extends State<CustomTextField> {
         //trop petit donc
         //setstate permet d'indiquer qu'il faut rebuild le widget lorsque l'on a une variable qui peut changer
         setState(() {
-          errorMessage = "Veuillez entrer plus ${widget.longueurMinimale} caratères pour ce champ.";
+          errorMessage =
+              "Veuillez entrer plus de ${widget.longueurMinimale} caratères pour ce champ.";
         });
       }
-      print("erreur");
+      print(errorMessage);
+    }
+    if (widget.longueurMaximale != null) {
+      if (TextEntree.length > widget.longueurMaximale!) {
+        setState(() {
+          errorMessage =
+              "Veuillez entrer moins de ${widget.longueurMaximale} caractères pour ce champ.";
+        });
+      }
+    }
+    if (widget.valueSet != null) {
+      // on peut appeler la fonction.
+      widget.valueSet!((errorMessage == null), TextEntree);
     }
   }
 
@@ -53,9 +69,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Padding(
       padding: widget.padding, //le padding spécifique est ici intégré au widget
       child: TextField(
-        decoration: InputDecoration(hintText: widget.hinText, errorText: errorMessage),
-        obscureText: widget.obscureText, //obscureText permet de chacher le texte c'est un booleen donc true or false
-        onSubmitted: userSubmittedText, //onsubmitted permet de demarrer une fonction lorsque l'on a cliqué sur envoyé
+        decoration:
+            InputDecoration(hintText: widget.hinText, errorText: errorMessage),
+        obscureText: widget
+            .obscureText, //obscureText permet de chacher le texte c'est un booleen donc true or false
+        onSubmitted:
+            userSubmittedText, //onsubmitted permet de demarrer une fonction lorsque l'on a cliqué sur envoyé
       ),
     );
   }
