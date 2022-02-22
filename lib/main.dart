@@ -55,15 +55,14 @@ class Wassimus extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 15),
             hinText: "Mot de passe ",
             obscureText: true,
-            longueurMinimale:
-                5), //ici avec l'importation de mon customtextfield hintext et obscuretext j'ai juste a indiqué les parametres dans le widget
+            longueurMinimale:5), //ici avec l'importation de mon customtextfield hintext et obscuretext j'ai juste a indiqué les parametres dans le widget
 
         Padding(
           padding: EdgeInsets.all(10),
           child: ElevatedButton(
             onPressed: boutonLoginAppuyer,
             child: Text(
-                "Login"), //child est un widget et donc on lui indique ce que l'on veut à l'intérieur
+                "Identifiant"), //child est un widget et donc on lui indique ce que l'on veut à l'intérieur
           ),
         ), // elevatedbutton un simple bouton
         // Spacer(), //le spacer va creer un espace entre les deux boutons
@@ -93,7 +92,7 @@ class Wassimus extends StatelessWidget {
             padding: EdgeInsets.all(10),
             child: ElevatedButton(
               onPressed: () {
-                print("le bouton > en tant qu'invité à été appuyé !");
+                print("le bouton en tant qu'invité à été appuyé !");
               },
               child: Text("Continuer en tant qu'invité"),
             )),
