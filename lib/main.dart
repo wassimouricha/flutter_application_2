@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'themes.dart';
 import 'customTextFIeld.dart';
@@ -49,8 +51,13 @@ class Wassimus extends StatelessWidget {
         // Row(
         //   children: [
         //iciavec row je fais une sorte de container horizontale avec comme enfant les deux widget bouton que j'ai crée précédement
-        CustomTextFIeld(padding: EdgeInsets.only(bottom: 15), hinText: "Mot de passe", obscureText: true, longueurMinimale: 5,), //ici avec l'importation de mon customtextfield hintext et obscuretext j'ai juste a indiqué les parametres dans le widget
-        
+        CustomTextField(
+            padding: EdgeInsets.only(bottom: 15),
+            hinText: "Mot de passe ",
+            obscureText: true,
+            longueurMinimale:
+                5), //ici avec l'importation de mon customtextfield hintext et obscuretext j'ai juste a indiqué les parametres dans le widget
+
         Padding(
           padding: EdgeInsets.all(10),
           child: ElevatedButton(
@@ -74,13 +81,13 @@ class Wassimus extends StatelessWidget {
             )
           ],
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 15),
-          child: TextField(
-            decoration: InputDecoration(
-                hintText: "Nom"), //textfield est un champ de texte
-          ),
-        ),
+        // Padding(
+        //   padding: EdgeInsets.symmetric(vertical: 15),
+        //   child: TextField(
+        //     decoration: InputDecoration(
+        //         hintText: "Nom"), //textfield est un champ de texte
+        //   ),
+        // ),
 
         Padding(
             padding: EdgeInsets.all(10),

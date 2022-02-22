@@ -1,7 +1,9 @@
+// ignore_for_file: must_be_immutable, use_key_in_widget_constructors, avoid_print, file_names, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
-class CustomTextFIeld extends StatefulWidget {
-  CustomTextFIeld(
+class CustomTextField extends StatefulWidget {
+  CustomTextField(
       {this.padding = EdgeInsets.zero,
       this.hinText = "",
       this.obscureText = false,
@@ -23,21 +25,23 @@ class CustomTextFIeld extends StatefulWidget {
   }
 }
 
-class _CustomTextFieldState extends State<CustomTextFIeld> {
+class _CustomTextFieldState extends State<CustomTextField> {
   String?
       errorMessage; //? indique la variable peut etre un null ou ne pas etre un null
 
   void userSubmittedText(String TextEntree) {
     //sera notre fonction lorsque l'on aura cliqué sur envoyé et elle sera enclenché par onSubmitted
-    errorMessage = null;
-    
+    setState(() {
+      errorMessage = null;
+    });
+
     if (widget.longueurMinimale != null) {
       //en faisant widget. cela permet d'acceder a toute la liste des parametre que l'on a définit au préablable et on devra le faire pour toutes les variables statiques
       if (TextEntree.length < widget.longueurMinimale!) {
         //ici avec le ! on certifie que longueurminimale n'est pas null vu que dans le if au dessus on l'a spécifié
         //trop petit donc
+        //setstate permet d'indiquer qu'il faut rebuild le widget lorsque l'on a une variable qui peut changer
         setState(() {
-          //setstate permet d'indiquer qu'il faut rebuild le widget lorsque l'on a une variable qui peut changer
           errorMessage =
               "Veuillez entrer plus ${widget.longueurMinimale} caratères pour ce champ.";
         });
