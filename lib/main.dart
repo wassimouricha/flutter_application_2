@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'themes.dart';
 import 'customTextFIeld.dart';
+import 'login_colonne.dart';
 
 void main() {
   runApp(Wassimus());
@@ -36,44 +37,10 @@ class Wassimus extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          "Login",
-          style: TextStyle(fontSize: 45),
-        ),
-        // Padding(
-        //   padding: EdgeInsets.symmetric(vertical: 15),
-        //   child: TextField(
-        //     decoration: InputDecoration(
-        //         hintText: "Tapez votre nom"), //textfield est un champ de texte
-        //   ),
-        // ),
-
-        // Row(
-        //   children: [
-        //ici avec row je fais une sorte de container horizontale avec comme enfant les deux widget bouton que j'ai crée précédement
-        CustomTextField(hinText:"Tapez votre nom" , padding:EdgeInsets.symmetric(vertical: 15),longueurMaximale: 20,),
-        CustomTextField(
-          padding: EdgeInsets.only(bottom: 15),
-          hinText: "Tapez votre mot de passe ",
-          obscureText: true,
-          longueurMinimale: 5,
-          longueurMaximale: 10,
-          valueSet: (valid, TextEntree) {
-           
-            print(TextEntree);
-          },
-        ), //ici avec l'importation de mon customtextfield hintext et obscuretext j'ai juste a indiqué les parametres dans le widget
-
-        Padding(
-          padding: EdgeInsets.all(10),
-          child: ElevatedButton(
-            onPressed: boutonLoginAppuyer,
-            child: Text(
-                "Identifiant"), //child est un widget et donc on lui indique ce que l'on veut à l'intérieur
-          ),
-        ), // elevatedbutton un simple bouton
+        LoginColone(),
         // Spacer(), //le spacer va creer un espace entre les deux boutons
         Column(
+          //ici avec row je fais une sorte de container horizontale avec comme enfant les deux widget bouton que j'ai crée précédement
           children: [
             Divider(
                 thickness:
