@@ -1,6 +1,6 @@
 # My first app
 
-This is my first and a  new Flutter project.
+This is my first and a  new Flutter project. You caod the apk if you want to test it just send me a mail at wbouriha5@gmail.com
 
 ## Getting Started
 
